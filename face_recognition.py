@@ -84,7 +84,7 @@ class Face_Recognition:
 
                 confidence=int((100*(1-predict/300)))
 
-                conn = mysql.connector.connect(username='root', password='1234',host='localhost',database='face_recognition',port=3306)
+                conn = mysql.connector.connect(username='root', password='123',host='localhost',database='face_recognition',port=3306)
                 cursor = conn.cursor()
 
                 cursor.execute("select Name from student where Student_ID="+str(id))

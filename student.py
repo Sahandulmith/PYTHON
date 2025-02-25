@@ -6,7 +6,7 @@ import mysql.connector
 import cv2
 # Testing Connection 
 """
-conn = mysql.connector.connect(username='root', password='1234',host='localhost',database='face_recognition',port=3306)
+conn = mysql.connector.connect(username='root', password='123',host='localhost',database='face_recognition',port=3306)
 cursor = conn.cursor()
 
 cursor.execute("show databases")
@@ -332,7 +332,7 @@ class Student:
             messagebox.showerror("Error","Please Fill All Fields are Required!",parent=self.root)
         else:
             try:
-                conn = mysql.connector.connect(username='root', password='1234',host='localhost',database='face_recognition',port=3306)
+                conn = mysql.connector.connect(username='root', password='123',host='localhost',database='face_recognition',port=3306)
                 mycursor = conn.cursor()
                 mycursor.execute("insert into student values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",(
                 self.var_std_id.get(),
@@ -362,7 +362,7 @@ class Student:
     # ===========================Fetch data form database to table ================================
 
     def fetch_data(self):
-        conn = mysql.connector.connect(username='root', password='1234',host='localhost',database='face_recognition',port=3306)
+        conn = mysql.connector.connect(username='root', password='123',host='localhost',database='face_recognition',port=3306)
         mycursor = conn.cursor()
 
         mycursor.execute("select * from student")
@@ -405,7 +405,7 @@ class Student:
             try:
                 Update=messagebox.askyesno("Update","Do you want to Update this Student Details!",parent=self.root)
                 if Update > 0:
-                    conn = mysql.connector.connect(username='root', password='1234',host='localhost',database='face_recognition',port=3306)
+                    conn = mysql.connector.connect(username='root', password='123',host='localhost',database='face_recognition',port=3306)
                     mycursor = conn.cursor()
                     mycursor.execute("update student set Name=%s,Department=%s,Course=%s,Year=%s,Semester=%s,Division=%s,Gender=%s,DOB=%s,Mobile_No=%s,Address=%s,Roll_No=%s,Email=%s,Teacher_Name=%s,PhotoSample=%s where Student_ID=%s",( 
                     self.var_std_name.get(),
@@ -442,7 +442,7 @@ class Student:
             try:
                 delete=messagebox.askyesno("Delete","Do you want to Delete?",parent=self.root)
                 if delete>0:
-                    conn = mysql.connector.connect(username='root', password='1234',host='localhost',database='face_recognition',port=3306)
+                    conn = mysql.connector.connect(username='root', password='123',host='localhost',database='face_recognition',port=3306)
                     mycursor = conn.cursor() 
                     sql="delete from student where Student_ID=%s"
                     val=(self.var_std_id.get(),)
@@ -482,7 +482,7 @@ class Student:
             messagebox.showerror("Error","Select Combo option and enter entry box",parent=self.root)
         else:
             try:
-                conn = mysql.connector.connect(username='root', password='1234',host='localhost',database='face_recognition',port=3306)
+                conn = mysql.connector.connect(username='root', password='123',host='localhost',database='face_recognition',port=3306)
                 my_cursor = conn.cursor()
                 sql = "SELECT Student_ID,Name,Department,Course,Year,Semester,Division,Gender,DOB,Mobile_No,Address,Roll_No,Email,Teacher_Name,PhotoSample FROM student where Roll_No='" +str(self.var_search.get()) + "'" 
                 my_cursor.execute(sql)
@@ -508,7 +508,7 @@ class Student:
         else:
             try:
                 
-                conn = mysql.connector.connect(username='root', password='1234',host='localhost',database='face_recognition',port=3306)
+                conn = mysql.connector.connect(username='root', password='123',host='localhost',database='face_recognition',port=3306)
                 mycursor = conn.cursor()
                 mycursor.execute("select * from student")
                 myreslut = mycursor.fetchall()
